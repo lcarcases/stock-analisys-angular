@@ -1,0 +1,7 @@
+<div [ngClass]="'cb_container'">
+    <input [ngClass]="'cb'" type="checkbox" (change)="this.onChangeState()" />
+    <label for="'cb'" [ngClass]="'cb_trail'">
+        <span [ngClass]="'cb_trail_handler'"></span>
+    </label>
+    <p [ngClass]="'cb_container_text'">{{cbText}}</p>
+</div>

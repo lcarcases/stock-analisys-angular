@@ -1,0 +1,23 @@
+<div [ngClass]="'container'">
+    <app-header [stockName] = "'STOCKS ANALYSIS APP  '"
+                [userName]  = "'Lisandro'"
+    >
+    </app-header>
+    <div [ngClass]= "'main'">
+        <app-collapsible-box [notifyChangeCollapsedState]="this.notifyChangeCollapsedState.bind(this)"
+                            [accordionModels] = "this.accordionModels"
+                            [accordionStyles] = "this.accordionStyles"
+        >
+        </app-collapsible-box>
+
+        <app-data-grid
+                [width] ="this.isCollapsedLateralMenu ? '70rem' : '45rem'"
+                [marginLeft] = "this.isCollapsedLateralMenu ? '6rem' : '0rem'"
+                [flag] = "this.isCollapsedLateralMenu ? '1' : '0'"
+                [columnDefs]="this.activeColumns"
+                [rowData]="this.stockData"
+                [data]="this.getStocks.bind(this)"
+            >
+        </app-data-grid>
+    </div>
+</div>

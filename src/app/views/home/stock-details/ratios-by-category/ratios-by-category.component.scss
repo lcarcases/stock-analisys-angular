@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-right: 28rem;
+}
+
+@media only screen and (max-width: 75em) {
+    .container {
+                  margin-right: 33.5rem;
+                  height: 66rem;
+               }
+
+}
+
+@media only screen and (max-width: 56.25em) {
+    .container {
+        margin-right: 35.5rem;
+    }
+}
+
+@media only screen and (max-width: 37.5em) {
+    .container {
+        //flex-direction: column;
+        height: 95rem;
+        flex-wrap: nowrap;
+        background-color: #1e2337;
+    }
+}

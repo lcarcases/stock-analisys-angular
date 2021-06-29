@@ -1,0 +1,30 @@
+<div
+    [ngClass]="{
+                 'accordion_item': true,
+                 'accordion_item__opened': opened === true
+               }"
+>
+  <div [ngClass]="'accordion_item__line'"
+      (click)="this.changeStatusOpened()"
+      [style.backgroundColor]="this.headerColor"
+  >
+    <h3 [ngClass]="'accordion_item__title'"
+        [style.color]="this.titleColor"
+    >
+      {{headerText}}
+    </h3>
+    <span [ngClass]="'accordion_item__icon'"></span>
+  </div>
+  <div [ngClass]="'accordion_item__inner'">
+    <div [ngClass]="'accordion_item__content'"
+        *ngFor="let metric of metrics"
+    >
+          <app-checkbox [cbText]="metric.cbText"
+                        [cbField]="metric.cbField"
+                        [changeEstatus]="metric.changeEstatus"
+                        [key] = "metric.key"
+          >
+          </app-checkbox>
+    </div>
+  </div>
+</div>

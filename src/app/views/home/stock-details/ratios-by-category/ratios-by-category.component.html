@@ -1,0 +1,176 @@
+<div [ngClass]="'container'">
+    <app-data-grid
+         [columnDefs]="'this.debtRatios.active_columns'"
+         [rowData]="'this.debtRatios.data'"
+         [height] = "(
+                       this.responsiveDimentions !== null &&
+                       this.responsiveDimentions.height !== undefined
+                     )
+                     ? this.responsiveDimentions.height
+                     : '15rem'"
+         [width]  = "(
+                       this.responsiveDimentions != null &&
+                       this.responsiveDimentions.width
+                     )
+                     ? this.responsiveDimentions.width
+                     : '26rem'"
+         [marginLeft] = "(
+                           this.responsiveDimentions != null &&
+                           this.responsiveDimentions.marginLeft
+                         )
+                         ? this.responsiveDimentions.marginLeft
+                         : '0rem'"
+         [marginRight] = "(
+                           this.responsiveDimentions != null &&
+                           this.responsiveDimentions.marginRight
+                          )
+                          ? this.responsiveDimentions.marginRight
+                          : '1rem'"
+    >
+    </app-data-grid>
+    <app-data-grid
+         [columnDefs]="this.capitalRatios.active_columns"
+         [rowData]="this.capitalRatios.data"
+         [height] =  "(
+                        this.responsiveDimentions !== null &&
+                        this.responsiveDimentions.height !== undefined
+                      )
+                      ? this.responsiveDimentions.height
+                      : '15rem'"
+         [width]  = "(
+                      this.responsiveDimentions != null &&
+                      this.responsiveDimentions.width
+                    )
+                    ? this.responsiveDimentions.width
+                    : '26rem'"
+          [marginLeft] = "(
+                           this.responsiveDimentions != null &&
+                           this.responsiveDimentions.marginLeft
+                          )
+                          ? this.responsiveDimentions.marginLeft
+                          : '0rem'"
+          [marginRight] = "(
+                            this.responsiveDimentions != null &&
+                            this.responsiveDimentions.marginRight
+                           )
+                           ? this.responsiveDimentions.marginRight
+                           : '1rem'"
+    >
+    </app-data-grid>
+    <app-data-grid
+         [columnDefs] = "this.liquidityRatios.active_columns"
+         [rowData]    = "this.liquidityRatios.data"
+         [height]     = "(
+                          this.responsiveDimentions !== null &&
+                          this.responsiveDimentions.height !== undefined
+                         )
+                         ? this.responsiveDimentions.height
+                         : '15rem'"
+         [width]      = "(
+                          this.responsiveDimentions != null &&
+                          this.responsiveDimentions.width
+                         )
+                         ? this.responsiveDimentions.width
+                         : '26rem'"
+         [marginLeft] = "(
+                          this.responsiveDimentions != null &&
+                          this.responsiveDimentions.marginLeft
+                         )
+                         ? this.responsiveDimentions.marginLeft
+                         : '0rem'"
+         [marginRight] = "(
+                            this.responsiveDimentions != null &&
+                            this.responsiveDimentions.marginRight
+                          )
+                          ? this.responsiveDimentions.marginRight
+                          : '1rem'"
+    >
+    </app-data-grid>
+    <app-data-grid
+         [columnDefs] = "this.operatingRatios.active_columns"
+         [rowData] = "this.operatingRatios.data"
+         [height] = "(
+                      this.responsiveDimentions !== null &&
+                      this.responsiveDimentions.height !== undefined
+                     )
+                     ? this.responsiveDimentions.height
+                     : '15rem'"
+         [width]  = "(
+                      this.responsiveDimentions != null &&
+                      this.responsiveDimentions.width
+                     )
+                     ? this.responsiveDimentions.width
+                     : '26rem'"
+         [marginLeft] = "(
+                          this.responsiveDimentions != null &&
+                          this.responsiveDimentions.marginLeft
+                         )
+                         ? this.responsiveDimentions.marginLeft
+                         : '0rem'"
+         [marginRight] = "(
+                           this.responsiveDimentions != null &&
+                           this.responsiveDimentions.marginRight
+                          )
+                          ? this.responsiveDimentions.marginRight
+                          : '1rem'"
+    >
+    </app-data-grid>
+    <app-data-grid
+         [columnDefs]="this.priceMultiples.active_columns"
+         [rowData]="this.priceMultiples.data"
+         [height] ="(
+                     this.responsiveDimentions !== null &&
+                     this.responsiveDimentions.height !== undefined
+                    )
+                    ? this.responsiveDimentions.height
+                    : '15rem'"
+         [width]  = "(
+                      this.responsiveDimentions != null &&
+                      this.responsiveDimentions.width
+                     )
+                     ? this.responsiveDimentions.width
+                     : '26rem'"
+         [marginLeft] = "(
+                          this.responsiveDimentions != null &&
+                          this.responsiveDimentions.marginLeft
+                         )
+                         ? this.responsiveDimentions.marginLeft
+                         : '0rem'"
+         [marginRight] = "(
+                           this.responsiveDimentions != null &&
+                           this.responsiveDimentions.marginRight
+                          )
+                          ? this.responsiveDimentions.marginRight
+                          : '1rem'"
+    >
+    </app-data-grid>
+    <app-data-grid
+         [columnDefs]="this.payoutRatios.active_columns"
+         [rowData]="this.payoutRatios.data"
+         [height] = "(
+                       this.responsiveDimentions !== null &&
+                       this.responsiveDimentions.height !== undefined
+                     )
+                     ? this.responsiveDimentions.height
+                     : '15rem'"
+         [width]  = "(
+                       this.responsiveDimentions != null &&
+                       this.responsiveDimentions.width
+                     )
+                     ? this.responsiveDimentions.width
+                     : '26rem'"
+         [marginLeft] = "(
+                          this.responsiveDimentions != null &&
+                          this.responsiveDimentions.marginLeft
+                         )
+                         ? this.responsiveDimentions.marginLeft
+                         : '0rem'"
+         [marginRight] = "(
+                          this.responsiveDimentions != null &&
+                          this.responsiveDimentions.marginRight
+                         )
+                         ? this.responsiveDimentions.marginRight
+                         : '1rem'"
+    >
+    </app-data-grid>
+</div>

@@ -1,0 +1,21 @@
+.container {
+    width: 56rem;
+    height: 54rem;
+    background-color: #1E2337;
+    color: white;
+    padding-left: 5rem;
+    padding-top: 2rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .container {
+               background-color: #050919;
+             }
+}
+
+@media only screen and (max-width: 37.5em) {
+   .container {
+               background-color: #1e2337;
+               width: 49rem;
+              }
+}

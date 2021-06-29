@@ -1,0 +1,56 @@
+input[type="text"] {
+    padding: 1rem;
+    font-size: 1.7rem;
+    border: 0.1rem solid grey;
+    float: left;
+    width: 70%;
+    height: 1rem;
+    background: #f1f1f1;
+}
+
+.searchButton {
+    float: left;
+    width: 13%;
+    padding: 1rem;
+    padding-top: 11px;
+    height: 3.2rem;
+    background: #e29402;
+    color: white;
+    font-size: 1.7rem;
+    border: 0.1rem solid grey;
+    border-left: none;
+    cursor: pointer;
+
+    &:hover {
+        background: #ebad39;
+    }
+}
+
+.search::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media only screen and (max-width: 56.25em) {
+    input[type="text"] {
+                         height: 1.3rem;
+                       }
+
+    .searchButton {
+                    padding-top: 0.2rem;
+                    padding-bottom: 0.4rem;
+                    height: 2.7rem;
+    }
+}
+
+@media only screen and (max-width: 37.5em) {
+    .search {
+        width: 39rem;
+        margin-left: 9rem;
+    }
+
+    .searchButton {
+        height: 2.7rem;
+    }
+}

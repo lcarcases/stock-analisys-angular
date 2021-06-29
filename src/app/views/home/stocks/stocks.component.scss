@@ -1,0 +1,44 @@
+$color-menu: #1E2337;
+$night: #34495e;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80rem;
+}
+
+.header {
+    &_stockName {
+        margin-left: 1rem;
+        margin-top: 2rem;
+        padding-left: 2.5rem;
+    }
+}
+
+.main {
+    display: flex;
+    height: 65rem;
+    background: $night;
+    padding-right: 2.3rem;
+    //padding-left: 7rem;
+}
+
+
+@media only screen and (max-width: 56.25em) {
+    .container {
+        width: 92rem;
+    }
+}
+
+@media only screen and (max-width: 37.5em) {
+    .main {
+       flex-direction: column;
+       width: 51.8rem;
+       background-color: #1E2337;
+    }
+
+    .container {
+        width: 54rem;
+    }
+}

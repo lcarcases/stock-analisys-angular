@@ -1,0 +1,78 @@
+@import './../../../styles.scss';
+
+.cb {
+    position: absolute;
+    opacity:0;
+    width: 4.3rem !important;
+    height: 1.9rem !important;
+    left: 1.3rem !important;
+    cursor: pointer;
+}
+
+.cb_container {
+    display: flex;
+    align-items: center;
+    background-color: #1E2337;
+    height: 3.3rem;
+    &_text {
+        font-size: 1.5rem;
+        margin-left: 1.1rem;
+        color: #DEE8FF;
+    }
+}
+
+.cb_trail {
+    display: flex;
+    align-items: center;
+    width: 4.5rem;
+    height: 2rem;
+    background: $midnight;
+    border-radius: 2.5rem;
+    transition: $transition;
+    cursor: pointer;
+
+    &_handler {
+       display: flex;
+       margin-left: 0.5rem;
+       justify-content: center;
+       align-items: center;
+       width: 1.5rem;
+       height: 1.5rem;
+       background: $night;
+       border-radius: 50%;
+       transition: $transition;
+       box-shadow: 0 0 8px rgba(0,0,0,0.3);
+       &:before {
+           content: "\00D7";
+           color: white;
+           font-size: 1.7rem;
+           font-weight: bold;
+       }
+    }
+}
+
+.cb:checked + .cb_trail {
+    background: $orange;
+    .cb_trail_handler {
+        margin-left: 59%;
+        background: $orange;
+        &::before {
+            content: "\2714";
+            width: 1.1rem;
+            height: 1.4rem;
+            font-size: 1.2rem;
+        }
+    }
+
+    .cb {
+        margin-left: 50%;
+    }
+}
+
+@media only screen and (max-width: 37.5em) {
+    .cb {
+        width: 4.4rem !important;
+        height: 1.5rem !important;
+        left: 1.4rem !important;
+    }
+}

@@ -1,0 +1,86 @@
+<div [ngClass]="'menu'" [style.height]="this.sideMenuStyles.height">
+     <div [ngClass]="{
+                       'menu__item__selected': (selectedItem === 1),
+                       'menu__item': !(selectedItem === 1)
+                    }"
+     (click)="this.onSelectMenuItem(1)"
+     >
+          <fa-icon [icon]="faTachometerAlt"
+               [ngClass]="'menu__item__icon'"
+          >
+          </fa-icon>
+          <span [ngClass]="'menu__item__text'">Overview</span>
+     </div>
+     <div [ngClass]="{
+                      'menu__item__selected': (selectedItem === 2),
+                      'menu__item': !(selectedItem === 2)
+                    }"
+          (click)="this.onSelectMenuItem(2)"
+     >
+          <fa-icon [icon]="faTable"
+                    [ngClass]="'menu__item__icon'"
+          >
+          </fa-icon>
+          <span [ngClass]="'menu__item__text'">MMM</span>
+     </div>
+     <div [ngClass]="{
+                       'menu__item__selected': (selectedItem === 3),
+                       'menu__item': !(selectedItem === 3)
+                    }"
+          (click)="this.onSelectMenuItem(3)"
+     >
+          <fa-icon [icon]="faCalendarAlt"
+               [ngClass]="'menu__item__icon'"
+          >
+          </fa-icon>
+          <span [ngClass]="'menu__item__text'">Ratios By Fiscal Period</span>
+     </div>
+     <div [ngClass]="{
+                      'menu__item__selected': (selectedItem === 4),
+                      'menu__item': !(selectedItem === 4)
+                    }"
+          (click)="this.onSelectMenuItem(4)"
+     >
+          <fa-icon [icon]="faChartLine"
+                   [ngClass]="'menu__item__icon'"
+          >
+          </fa-icon>
+          <span [ngClass]="'menu__item__text'">Ratios By Category</span>
+     </div>
+     <div [ngClass]="{
+                      'menu__item__selected': (selectedItem === 5),
+                      'menu__item': !(selectedItem === 5)
+                    }"
+          (click)="this.onSelectMenuItem(5)"
+     >
+          <fa-icon [icon]="faBook"
+               [ngClass]="'menu__item__icon'"
+          >
+          </fa-icon>
+          <span [ngClass]="'menu__item__text'">Balance Sheet</span>
+     </div>
+     <div [ngClass]="{
+                      'menu__item__selected': (selectedItem === 6),
+                      'menu__item': !(selectedItem === 6)
+                    }"
+          (click)="this.onSelectMenuItem(6)"
+     >
+          <fa-icon [icon]="faBookOpen"
+               [ngClass]="'menu__item__icon'"
+          >
+          </fa-icon>
+          <span [ngClass]="'menu__item__text'">Income Statement</span>
+     </div>
+     <div [ngClass]="{
+                      'menu__item__selected': (selectedItem === 7),
+                      'menu__item': !(selectedItem === 7)
+                    }"
+          (click)="this.onSelectMenuItem(7)"
+     >
+          <fa-icon [icon]="faBookReader"
+                   [ngClass]="'menu__item__icon'"
+          >
+          </fa-icon>
+          <span [ngClass]="'menu__item__text'">Cashflow Statement</span>
+     </div>
+</div>

@@ -1,0 +1,139 @@
+@import './../../../styles.scss';
+
+.container {
+    width: 300px;
+    height: 800px
+}
+
+.sidebar {
+  position: relative;
+  overflow: hidden;
+  width: 30rem;
+  height: 100%;
+  margin-right: 2.7rem;
+  &_collapsed {
+      position: absolute;
+  }
+}
+
+.toogle_bar {
+       width: 3rem;
+       position: absolute;
+       //padding-top: 0.7rem;
+       left: 25rem;
+       top: 0rem;
+       z-index: 2;
+       background-color: $bg-color-2;
+       color: white;
+       cursor: pointer;
+       text-align: center;
+       transition: 0.5s;
+
+       &_icon {
+                color: $color-menu-icon;
+                font-size: 2rem;
+                margin-top: 0rem;
+                margin-left: 1rem;
+
+                &_collapsed {
+                  font-size: 2rem;
+                  margin-left: 0rem;
+                  margin-top: 0rem;
+                }
+        }
+
+       &__collapsed {
+           width: 3rem;
+           height: 100%;
+           position: absolute;
+           left: 0rem;
+           top: 0rem;
+           padding-top: 0.8rem;
+           z-index: 2;
+           background-color: $color-menu;
+           color: white;
+           text-align: center;
+           cursor: pointer;
+           transition: 0.5s;
+     }
+}
+
+.collapsible {
+        //position: absolute;
+        width: 30rem;
+        height: 100%;
+        background-color: $color-menu;
+        white-space: nowrap;
+        transition: 0.5s;
+
+        &_header {
+            display: flex;
+            background-color:$color-menu;
+
+            &_icon {
+                color: $color-menu-icon;
+                font-size: 2rem;
+                //margin-top: 0.7rem;
+                margin-left: 1rem;
+            }
+
+            &_bar {
+                color: $color-menu-icon;
+                font-size: 1.7rem;
+                margin-top: 1rem;
+                cursor: pointer;
+            }
+        }
+
+        &_content {
+            background-color: $color-menu;
+            color: $color-menu-text;
+            margin-left: 1rem;
+            margin-right: 1.2rem;
+            margin-top: 2rem;
+            font-size: 2rem;
+            // Set scroll configuration on lateral menu
+            height: 63rem;
+            overflow-y: auto;
+        }
+
+        &__collapsed {
+           width: 0rem;
+           height: 100%;
+           background-color: $color-menu;
+           overflow-x: hidden;
+           white-space: nowrap;
+           transition: 0.5s;
+           //animation: lateralMenuCollapsed 2s linear infinite;
+        }
+}
+
+@keyframes lateralMenuCollapsed {
+  0% { transform: opacity(100); }
+  80% { transform: opacity(0); }
+}
+
+
+.collapsible_header_appName {
+                    color: $color-menu-text;
+                    font-size: 2rem;
+                    text-align: center;
+                    margin-left: 4rem;
+                    &_highlighted {
+                         color: #e29402;
+                    }
+
+}
+
+@media only screen and (max-width: 37.5em) {
+  .sidebar {
+     margin-left: 16rem;
+  }
+
+  .collapsible {
+     width: 30rem;
+     &_content {
+        height: 25rem;
+     }
+  }
+}

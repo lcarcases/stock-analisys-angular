@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+$bg-color-1: #050919;
+$bg-color-2:#1E2337;
+$color-menu: #1E2337;
+$color-menu-icon: #DEE8FF;
+$color-menu-text: #DEE8FF;
+
+$clouds: #ecf0f1;
+$turquoise: #1abc9c;
+$greensea: #16a085;
+$orange: #e29402;
+$night: #34495e;
+$midnight: #2c3e50;
+$transition: all .5s ease;
+
+$cAccent: #3978EF;
+$cBlack: #121212;
+$cGray: #333;
+$cLightGray: rgba(#000, 0.1);
+
+body {
+    background: $bg-color-1;
+  }
+
+html {
+    font-size: 16px;
+    //height: 100%;
+    min-height: calc(100% - 10rem);
+    background: #050919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";

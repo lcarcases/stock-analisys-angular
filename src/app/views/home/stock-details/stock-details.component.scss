@@ -1,0 +1,49 @@
+.main {
+    height: 57rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80rem;
+}
+
+.header {
+    &_stockName {
+        margin-left: 1rem;
+        margin-top: 2rem;
+    }
+}
+
+
+@media only screen and (max-width: 75em) {
+    .container {
+                 width: 92rem;
+               }
+}
+
+@media only screen and (max-width: 37.5em) {
+    .main {
+       flex-direction: column;
+       width: 54rem;
+       background-color: #1E2337;
+    }
+
+    .container {
+        width: 54rem;
+    }
+
+    .sidebar {
+        margin-left: 16rem;
+     }
+
+     .collapsible {
+        width: 30rem;
+        &_content {
+           height: 25rem;
+        }
+     }
+}

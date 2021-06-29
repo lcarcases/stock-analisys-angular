@@ -1,0 +1,155 @@
+html {
+  min-height: calc(100% - 10rem);
+background: #050919;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.container {
+    background-color: #e29402;
+    display: flex;
+    flex-direction: row;
+    width: 50rem;
+    height: 35rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &_register {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #e29402;
+
+      &_title {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        width: 70%;
+        text-align: center;
+      }
+
+      &_username {
+        margin-bottom: 0.5rem;
+        border-radius: 0.8rem;
+      }
+
+      &_email {
+        margin-bottom: 0.5rem;
+        border-radius: 0.8rem;
+      }
+
+      &_password {
+        margin-bottom: 0.5rem;
+        border-radius: 0.8rem;
+      }
+
+      &_button {
+        background-color: #1E2337;
+        width: 37rem;
+        height: 4rem;
+        color: antiquewhite;
+        border-radius: 1rem;
+      }
+      &_create {
+        width: 13rem;
+        margin: 0;
+        text-decoration: underline;
+        margin-left: 23rem;
+        text-align: end;
+        &:hover {
+            cursor: pointer;
+        }
+      }
+    }
+    hr {
+        width: 37rem;
+        height: 0.001rem;
+        background-color: #1E2337;
+        border-color: #1E2337;
+        margin-top: 1.5rem;
+        margin-bottom: 1.3rem;
+    }
+    &_social {
+        display: flex;
+        flex-direction: column;
+        background-color: #e29402;
+        justify-content: space-evenly;
+
+        &_facebook {
+            display: inline-block;
+            background: white;
+            color: #444;
+            width: 37rem;
+            border-radius: 1.5rem;
+            border: thin solid #888;
+            box-shadow: 0.1rem 0.1rem 0.1rem grey;
+            white-space: nowrap;
+
+            &:hover {
+               cursor: pointer;
+            }
+
+            &_img {
+                background: url('./../../../assets/images/facebook-icon.png') transparent 5px 50% no-repeat;
+                display: inline-block;
+                vertical-align: middle;
+                width: 4.2rem;
+                height: 4.2rem;
+                margin-left: 2.6rem;
+            }
+
+            &_text {
+                display: inline-block;
+                vertical-align: middle;
+                padding-left: 4.2rem;
+                padding-right: 4.2rem;
+                font-size: 1.7rem;
+                font-weight: bold;
+            }
+        }
+
+        &_google {
+            display: inline-block;
+            background: white;
+            color: #444;
+            width: 37rem;
+            border-radius: 1.5rem;
+            border: thin solid #888;
+            box-shadow: 0.1rem 0.1rem 0.1rem grey;
+            white-space: nowrap;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &_img {
+                background: url('./../../../assets/images/google-icon.png') transparent 5px 50% no-repeat;
+                display: inline-block;
+                vertical-align: middle;
+                width: 4.2rem;
+                height: 4.2rem;
+                margin-left: 2.6rem;
+            }
+
+            &_text {
+                display: inline-block;
+                vertical-align: middle;
+                padding-left: 4.2rem;
+                padding-right: 4.2rem;
+                font-size: 1.7rem;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+input[type="text"] {
+  padding: 1rem;
+  font-size: 1.7rem;
+  border: 0.1rem solid grey;
+  float: left;
+  width: 70%;
+  height: 1rem;
+  background: #f1f1f1;
+}

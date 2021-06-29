@@ -1,0 +1,73 @@
+<div [ngClass]="'container'">
+    <form (onSubmit)="'this.submitHandler'">
+      <div [ngClass]="'container_register'">
+          <h2 *ngIf="this.isLogin; else templateTextCreateAccount"
+              [ngClass]="'container_register_title'"
+          >
+            Sign in to continue
+          </h2>
+
+          <ng-template #templateTextCreateAccount>
+            <h2 [ngClass]="'container_register_title'">
+              Create account
+            </h2>
+          </ng-template>
+
+          <input name="username"
+                [ngClass]="'container_register_username'"
+                type="text"
+                (onChange)="this.onChangeInput($event)"
+                placeholder="Username"
+          />
+          <input *ngIf="!this.isLogin"
+                 name="email"
+                 [ngClass]="'container_register_email'"
+                 type="text"
+                 (onChange)="this.onChangeInput($event)"
+                 placeholder="Email Address"
+          />
+          <input name="password"
+                 [ngClass] = "'container_register_password'"
+                 type="text"
+                 (onChange)="this.onChangeInput($event)"
+                 placeholder="Password"
+          />
+          <input *ngIf="this.isLogin; else templateBtnCreateAccount"
+                 [ngClass] = "'container_register_button'"
+                 type="submit"
+                 value="'Login'"/>
+          <h3 *ngIf="!this.isLogin; else templateLogin"
+                  [ngClass]="'container_register_create'"
+                  (onClick)="this.onToggleLoginRegisterView.bind(this)">
+          Create an account
+          </h3>
+          <ng-template #templateBtnCreateAccount>
+                <input [ngClass] = "'container_register_button'"
+                       type="submit"
+                       value="Create account"
+                />
+          </ng-template>
+          <ng-template #templateLogin>
+              <h3 [ngClass]="'container_register_create'"
+                      (onClick)="this.onToggleLoginRegisterView.bind(this)">
+              Login
+              </h3>
+          </ng-template>
+          <hr/>
+      </div>
+    </form>
+    <div [ngClass]="'container_social'">
+        <div [ngClass]="'container_social_facebook'"
+            (onClick)="this.onLoginWithFacebook.bind(this)"
+        >
+            <span [ngClass] = "'container_social_facebook_img'"></span>
+            <span [ngClass] = "'container_social_facebook_text'">Continue with Facebook</span>
+        </div>
+        <div [ngClass]="'container_social_google'"
+             (onClick)="this.onLoginWithGoogle.bind(this)"
+        >
+            <span [ngClass]="'container_social_google_img'"></span>
+            <span [ngClass]="'container_social_google_text'">Continue with Google</span>
+        </div>
+    </div>
+</div>

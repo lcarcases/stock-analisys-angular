@@ -1,0 +1,17 @@
+<div [ngClass]="'wrapper'">
+    <ul [ngClass]="'accordion_list'"
+        [style.backgroundColor]="this.accordionStyles.backgroundColor"
+        *ngFor="let accordionItemData of data"
+    >
+        <li>
+            <app-accordion-item
+                [ngClass]="'accordion_list__item'"
+                [headerText]="accordionItemData.headerText"
+                [headerColor]="accordionStyles.headerColor"
+                [titleColor]="accordionStyles.titleColor"
+                [metrics]="accordionItemData.checkboxMetricsModel"
+            >
+            </app-accordion-item>
+        </li>
+    </ul>
+</div>

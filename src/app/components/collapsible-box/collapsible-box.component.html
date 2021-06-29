@@ -1,0 +1,31 @@
+<div
+     [ngClass]="{
+                  'sidebar': collapsed === false,
+                  'sidebar_collapsed': collapsed === true
+                }"
+>
+        <div [ngClass]="{'toogle_bar': collapsed === false,
+                         'toogle_bar__collapsed': collapsed === true
+                        }"
+             (click)="this.onBarIconClick()">
+                <fa-icon [ngClass]="{
+                                     'toogle_bar_icon': collapsed === false,
+                                     'toogle_bar_icon_collapsed': collapsed === true
+                                    }"
+                         [icon]="faBars"></fa-icon>
+        </div>
+        <div [ngClass]="{
+                        'collapsible': collapsed === false,
+                        'collapsible__collapsed': collapsed === true
+                       }">
+            <div [ngClass]="'collapsible_header'">
+                 <fa-icon [ngClass]="'collapsible_header_icon'" [icon]="faUniversity"></fa-icon>
+            </div>
+            <div [ngClass]="'collapsible_content'">
+                <app-accordion [data] = "this.accordionModels"
+                               [accordionStyles] = "this.accordionStyles"
+                >
+                </app-accordion>
+            </div>
+        </div>
+</div>

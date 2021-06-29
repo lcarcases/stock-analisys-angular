@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /*this make that this property be heritable for all element in
+  the page*/
+  box-sizing: inherit; }
+
+html {
+  /*
+       Define what  1rem is. This is because rem unit is based on root(html)
+       font size. Then, in this case, 1 rem is equal to 10px. This is useful
+       for response design
+
+       We put this attribute in % in case of user change navigator font-size,
+       default navigator font size is 16px, that in percentage is
+       100%, if i want 10px like in this case, 10px/16px is 0.625 that
+       is 62.5%. Then 0.625*16px = 10px, if user increase font-size to 22
+       our html font size in pixel would be 0.625*22px = 13.73px
+    */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+}
+
+// Set scrollbar styles
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #a3a1a1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(114, 113, 113);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media only screen and (max-width: 75em) {
+  html {
+         font-size: 56.25%;
+       }
+}
+
+@media only screen and (max-width: 56.25em) {
+  html {
+         font-size: 50%;
+       }
+}
+
+@media only screen and (max-width: 37.5em) {
+html {
+       font-size: 50%;
+     }
+}

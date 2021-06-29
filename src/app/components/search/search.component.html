@@ -1,0 +1,6 @@
+<div>
+    <div [ngClass]="'search'">
+     <input type="text" placeholder="Search.." name="searchText" ng-change="this.handleChange()">
+     <button type="submit" [ngClass]="'searchButton'" (click)="this.searchButtonClick()"><fa-icon [icon]="faSearch"></fa-icon></button>
+    </div>
+</div>

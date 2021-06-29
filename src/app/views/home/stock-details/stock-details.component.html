@@ -1,0 +1,60 @@
+<div>
+    <app-header [stockName] = "this.symbol"
+                [userName]  = "username"
+                [ngClass]   ="'header'"
+                [headerStyles] ="this.headerStyles"
+    >
+    </app-header>
+    <div [ngClass]="'container'"
+         [ngStyle]="{
+                      width: containerStyles.width
+                    }"
+    >
+
+        <div [ngClass] = "'main'">
+            <app-side-menu [ngClass]="'sideMenu'"
+                           [onClickSelectMenuItem]="this.onClickSelectMenuItem.bind(this)"
+                           [sideMenuStyles]="this.sideMenuStyles"
+            ></app-side-menu>
+
+            <app-loading *ngIf = "this.loading"></app-loading>
+
+            <Overview *ngIf = "this.selectedItem === 1"
+                      [ngClass]="'overview'"
+                      [stocksData]="'this.stockData'">
+            </Overview>
+
+
+            <MMM *ngIf = "this.selectedItem === 2"
+                [ngClass]="'mmm'"
+                [stocksData]="this.stockData">
+            </MMM>
+
+            <RatiosByFiscalPeriod  *ngIf = "this.selectedItem === 3"
+                                   [ngClass]="'ratiosByFiscalPeriod'"
+                                   stocksData="this.stockData">
+            </RatiosByFiscalPeriod>
+
+            <RatiosByCategory *ngIf = "this.selectedItem === 4"
+                              [ngClass] = "'ratiosByCategory'"
+                              stocksData = "this.stockData">
+            </RatiosByCategory>
+
+            <BalanceSheet *ngIf="this.selectedItem === 5"
+                          [ngClass]="'balanceSheet'"
+                          stocksData="this.stockData">
+            </BalanceSheet>
+
+
+            <IncomeStatement *ngIf="this.selectedItem === 6"
+                             [ngClass]="'incomeStatement'"
+                             [stocksData]="'this.stockData'">
+            </IncomeStatement>
+
+            <CashflowStatement  *ngIf="this.selectedItem === 7"
+                                [ngClass]="'cashflowStatement'"
+                                stocksData="this.stockData">
+            </CashflowStatement>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+
+<div [ngClass]="'header'">
+    <div [ngClass]="'stockName'">
+        <h2><span >{{this.stockName}}</span></h2>
+      </div>
+      <div [ngClass]="'searchComponent'">
+         <app-search></app-search>
+      </div>
+      <div [ngClass]="'user'">
+        <h2><span [ngClass]="'user__name'">Lisandro</span></h2>
+        <img [ngClass]="'user__avatar'" src="assets/images/empty-avatar.jpg" alt='avatar'/>
+      </div>
+</div>
