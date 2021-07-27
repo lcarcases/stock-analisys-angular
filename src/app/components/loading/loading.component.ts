@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadingComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+     console.log("Se ingreso al constructor del componente Loading");
+  }
 
   ngOnInit(): void {
+    console.log("Se ingreso al Init del componente Loading");
   }
 
 }

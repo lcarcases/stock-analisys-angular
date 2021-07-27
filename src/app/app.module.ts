@@ -22,6 +22,12 @@ import { CardComponent } from './components/card/card.component';
 import { MmmComponent } from './views/home/stock-details/mmm/mmm.component';
 import { RatiosByFiscalPeriodComponent } from './views/home/stock-details/ratios-by-fiscal-period/ratios-by-fiscal-period.component';
 import { RatiosByCategoryComponent } from './views/home/stock-details/ratios-by-category/ratios-by-category.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TreeDatagridComponent } from './components/tree-datagrid/tree-datagrid.component';
+import { CheckboxColumnComponent } from './components/checkbox-column/checkbox-column.component';
+import { BalanceSheetComponent } from './views/home/stock-details/balance-sheet/balance-sheet.component';
+import { IncomeStatementComponent } from './views/home/stock-details/income-statement/income-statement.component';
+import { CashflowStatementComponent } from './views/home/stock-details/cashflow-statement/cashflow-statement.component';
 
 @NgModule({
   declarations: [
@@ -43,12 +49,18 @@ import { RatiosByCategoryComponent } from './views/home/stock-details/ratios-by-
     MmmComponent,
     RatiosByFiscalPeriodComponent,
     RatiosByCategoryComponent,
+    TreeDatagridComponent,
+    CheckboxColumnComponent,
+    BalanceSheetComponent,
+    IncomeStatementComponent,
+    CashflowStatementComponent,
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     routing,
-    AgGridModule.withComponents([])
+    HttpClientModule,
+    AgGridModule.withComponents([CheckboxColumnComponent])
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

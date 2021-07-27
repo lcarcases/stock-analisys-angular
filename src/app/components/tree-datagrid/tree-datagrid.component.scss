@@ -1,0 +1,95 @@
+
+.aggrid-container .ag-cell:nth-child(1) span input[type="checkbox"] + div {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100px solid black;
+    border-bottom: 50px solid transparent;
+    border-top-width: 14px;
+    border-bottom-width: 11px;
+    border-left-width: 24px;
+}
+
+.aggrid-container .ag-cell:nth-child(1) span input[type="checkbox"] + i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin-left: -6rem;
+}
+
+.aggrid-container .ag-cell:nth-child(2) {
+    text-align: left;
+}
+
+.aggrid-container .ag-cell:nth-child(1) span input[type="checkbox"]:checked + div {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid black;
+    border-top-width: 19px;
+    border-right-width: 13px;
+    border-left-width: 15px;
+    border-bottom-width: 11px;
+}
+
+.aggrid-container .ag-cell:nth-child(1) span input[type="checkbox"]:checked + i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin-left: -6rem;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 12;
+    width: 2rem;
+    height: 1.5rem;
+    left: 0.1rem;
+    margin-top: 0rem;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1000;
+}
+
+@media only screen and (max-width: 56.25em) {
+
+    .aggrid-container .ag-cell:nth-child(1) span input[type="checkbox"] + i {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        margin-left: -12rem;
+    }
+
+    .aggrid-container .ag-cell:nth-child(1) span input[type="checkbox"]:checked + i {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        margin-left: -12rem;
+    }
+
+    input[type="checkbox"] {
+
+        position: absolute;
+        opacity: 12;
+        width: 2.5rem;
+        height: 3rem;
+        left: 0rem;
+        margin-top: 0rem;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 1000;
+    }
+  }

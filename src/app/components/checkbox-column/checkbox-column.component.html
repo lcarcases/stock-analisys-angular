@@ -1,0 +1,14 @@
+<div>
+  <span *ngIf="params.data.isOpen !== undefined">
+    <input *ngIf="params.data.isOpen; else templateUnchecked"
+          type='checkbox'
+          [checked]="true"/>
+    <i></i>
+  </span>
+  <ng-template #templateUnchecked>
+      <span>
+        <input type='checkbox'>
+        <i></i>
+      </span>
+  </ng-template>
+</div>

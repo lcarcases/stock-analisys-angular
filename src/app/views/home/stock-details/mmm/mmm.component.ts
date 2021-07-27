@@ -8,6 +8,7 @@ import { Component, OnInit, DoCheck, OnDestroy, Input } from '@angular/core';
 export class MmmComponent implements OnInit, DoCheck, OnDestroy {
 
   @Input() stocksData: Array<Object>;
+  thereIsData: Number;
   responsiveDimentions = {
                            width: '',
                            marginLeft: '',
@@ -56,28 +57,41 @@ export class MmmComponent implements OnInit, DoCheck, OnDestroy {
     };
 
   constructor() {
-
-         let meaningData    = this.getMeaningData(this.stocksData);
-         this.meaning.data  = meaningData;
-         let moatData   = this.getMoatData(this.stocksData);
-         this.moat.data = moatData;
-         let managementData = this.getManagementData(this.stocksData);
-         this.management.data = managementData;
-
-         if( window.innerWidth > 375 && window.innerWidth <= 900) {
-               this.responsiveDimentions.width  = '67rem';
-          }
-
-          if(window.innerWidth <= 375) {
-               this.responsiveDimentions.width  = '45rem';
-               this.responsiveDimentions.marginLeft = '4rem';
-          }
   }
 
   ngOnInit(): void {
+    if(this.stocksData == undefined)  {
+      this.thereIsData = 0;
+    } else {
+      this.thereIsData = 1;
+    }
+    console.log("Se ingreso al componente MMM", this.stocksData);
+    let meaningData: any;
+    let moatData: any;
+    let managementData: any;
+
+    if(this.stocksData !== undefined) {
+      meaningData    = this.getMeaningData(this.stocksData);
+      this.meaning.data  = meaningData;
+      moatData   = this.getMoatData(this.stocksData);
+      this.moat.data = moatData;
+      managementData = this.getManagementData(this.stocksData);
+      this.management.data = managementData;
+
+    }
+
+    if( window.innerWidth > 375 && window.innerWidth <= 900) {
+          this.responsiveDimentions.width  = '67rem';
+     }
+
+     if(window.innerWidth <= 375) {
+          this.responsiveDimentions.width  = '45rem';
+          this.responsiveDimentions.marginLeft = '4rem';
+     }
   }
 
   ngDoCheck() {
+      console.log("Se ejecutó el doCheck de la vista MMM")
   }
 
   ngOnDestroy() {

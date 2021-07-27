@@ -1,0 +1,21 @@
+<div [ngClass]="'styles.container'">
+    <app-tree-datagrid
+        [columnDefs]="this.activeColumns"
+        [rowData]="this.data"
+        [width] = "
+                   ( this.responsiveDimentions != null &&
+                     this.responsiveDimentions.width
+                   )
+                   ? this.responsiveDimentions.width
+                   : '50rem'"
+        [marginLeft] = "
+                        ( this.responsiveDimentions != null &&
+                          this.responsiveDimentions.marginLeft
+                        )
+                        ? this.responsiveDimentions.marginLeft
+                        : '0rem'"
+        [height] = "'40rem'"
+        [onSelectedRow] = "this.onSelectedRow.bind(this)"
+    >
+    </app-tree-datagrid>
+</div>

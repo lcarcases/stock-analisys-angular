@@ -21,6 +21,10 @@ export class RatiosByFiscalPeriodComponent implements OnInit, DoCheck, OnDestroy
 
   constructor() {
 
+   }
+
+  ngOnInit(): void {
+
     this.activesColumns = this.getActiveColumns(this.stocksData);
     let ratiosByFiscalPeriod = this.getRatiosByFiscalPeriod(this.stocksData);
 
@@ -44,11 +48,6 @@ export class RatiosByFiscalPeriodComponent implements OnInit, DoCheck, OnDestroy
                             data: ratiosByFiscalPeriod
                           };
     this.responsiveDimentions = responsiveDimentions;
-
-
-   }
-
-  ngOnInit(): void {
   }
 
   ngDoCheck() {

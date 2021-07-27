@@ -43,7 +43,7 @@ export class DataGridComponent implements OnInit, DoCheck, OnDestroy {
 
     // CALLBACKS
     //isScrollLag: () => false
-};
+   };
 
   constructor( private route: ActivatedRoute,
                private router: Router) {

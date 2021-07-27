@@ -1,0 +1,28 @@
+<div
+      [ngClass]="{
+                  'ag-theme-balham': true,
+                  'aggrid-container': true
+                 }"
+>
+
+        <ag-grid-angular
+                        [ngStyle]="{
+                                        'width': this.width,
+                                        'height': this.height,
+                                        'margin-right': this.marginRight,
+                                        'margin-top': this.marginTop,
+                                        'margin-left': this.marginLeft,
+                                        'margin-bottom': this.marginBottom
+                                   }"
+                      [frameworkComponents]='frameworkComponents'
+                      [ngClass]="'dataGrid'"
+                      [columnDefs]="columnDefs"
+                      [rowData]="rowData"
+                      pagination="'true'"
+                      [rowSelection]="'single'"
+                      [rowClassRules]="rowClassRules"
+                      (gridReady)="this.onGridReady($event)"
+                      (rowClicked)="onRowClicked($event)"
+        >
+        </ag-grid-angular>
+</div>

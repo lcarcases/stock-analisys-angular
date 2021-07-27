@@ -17,44 +17,45 @@
                            [sideMenuStyles]="this.sideMenuStyles"
             ></app-side-menu>
 
-            <app-loading *ngIf = "this.loading"></app-loading>
+            <app-loading *ngIf="this.loading"></app-loading>
 
-            <Overview *ngIf = "this.selectedItem === 1"
-                      [ngClass]="'overview'"
-                      [stocksData]="'this.stockData'">
-            </Overview>
+            <div *ngIf="selectedItem === 1">
+                <app-overview *ngIf="selectedItem === 1"
+                            [ngClass]="'overview'"
+                            [stocksData]="stockData">
+                </app-overview>
+            </div>
 
+            <app-mmm *ngIf="selectedItem === 2"
+                     [ngClass]="'mmm'"
+                     [stocksData]="this.stockData">
+            </app-mmm>
 
-            <MMM *ngIf = "this.selectedItem === 2"
-                [ngClass]="'mmm'"
-                [stocksData]="this.stockData">
-            </MMM>
-
-            <RatiosByFiscalPeriod  *ngIf = "this.selectedItem === 3"
+            <app-ratios-by-fiscal-period  *ngIf="selectedItem === 3"
                                    [ngClass]="'ratiosByFiscalPeriod'"
-                                   stocksData="this.stockData">
-            </RatiosByFiscalPeriod>
+                                   [stocksData]="this.stockData">
+            </app-ratios-by-fiscal-period>
 
-            <RatiosByCategory *ngIf = "this.selectedItem === 4"
+            <app-ratios-by-category *ngIf = "selectedItem === 4"
                               [ngClass] = "'ratiosByCategory'"
-                              stocksData = "this.stockData">
-            </RatiosByCategory>
+                              [stocksData] = "this.stockData">
+            </app-ratios-by-category>
 
-            <BalanceSheet *ngIf="this.selectedItem === 5"
+            <app-balance-sheet *ngIf="selectedItem === 5"
                           [ngClass]="'balanceSheet'"
-                          stocksData="this.stockData">
-            </BalanceSheet>
+                          [stocksData]="this.stockData">
+            </app-balance-sheet>
 
 
-            <IncomeStatement *ngIf="this.selectedItem === 6"
+            <app-income-statement *ngIf="selectedItem === 6"
                              [ngClass]="'incomeStatement'"
-                             [stocksData]="'this.stockData'">
-            </IncomeStatement>
+                             [stocksData]="this.stockData">
+            </app-income-statement>
 
-            <CashflowStatement  *ngIf="this.selectedItem === 7"
+            <app-cashflow-statement  *ngIf="selectedItem === 7"
                                 [ngClass]="'cashflowStatement'"
-                                stocksData="this.stockData">
-            </CashflowStatement>
+                                [stocksData]="this.stockData">
+            </app-cashflow-statement>
         </div>
     </div>
 </div>

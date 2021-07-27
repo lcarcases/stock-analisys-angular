@@ -1,7 +1,7 @@
 <div [ngClass]="'container'">
     <app-data-grid
-         [columnDefs]="'this.debtRatios.active_columns'"
-         [rowData]="'this.debtRatios.data'"
+         [columnDefs]="this.debtRatios.active_columns"
+         [rowData]="this.debtRatios.data"
          [height] = "(
                        this.responsiveDimentions !== null &&
                        this.responsiveDimentions.height !== undefined
@@ -10,19 +10,19 @@
                      : '15rem'"
          [width]  = "(
                        this.responsiveDimentions != null &&
-                       this.responsiveDimentions.width
+                       this.responsiveDimentions.width !== undefined
                      )
                      ? this.responsiveDimentions.width
                      : '26rem'"
          [marginLeft] = "(
                            this.responsiveDimentions != null &&
-                           this.responsiveDimentions.marginLeft
+                           this.responsiveDimentions.marginLeft !== undefined
                          )
                          ? this.responsiveDimentions.marginLeft
                          : '0rem'"
          [marginRight] = "(
                            this.responsiveDimentions != null &&
-                           this.responsiveDimentions.marginRight
+                           this.responsiveDimentions.marginRight !== undefined
                           )
                           ? this.responsiveDimentions.marginRight
                           : '1rem'"
@@ -39,19 +39,19 @@
                       : '15rem'"
          [width]  = "(
                       this.responsiveDimentions != null &&
-                      this.responsiveDimentions.width
+                      this.responsiveDimentions.width !== undefined
                     )
                     ? this.responsiveDimentions.width
                     : '26rem'"
           [marginLeft] = "(
                            this.responsiveDimentions != null &&
-                           this.responsiveDimentions.marginLeft
+                           this.responsiveDimentions.marginLeft !== undefined
                           )
                           ? this.responsiveDimentions.marginLeft
                           : '0rem'"
           [marginRight] = "(
                             this.responsiveDimentions != null &&
-                            this.responsiveDimentions.marginRight
+                            this.responsiveDimentions.marginRight !== undefined
                            )
                            ? this.responsiveDimentions.marginRight
                            : '1rem'"
@@ -68,19 +68,19 @@
                          : '15rem'"
          [width]      = "(
                           this.responsiveDimentions != null &&
-                          this.responsiveDimentions.width
+                          this.responsiveDimentions.width !== undefined
                          )
                          ? this.responsiveDimentions.width
                          : '26rem'"
          [marginLeft] = "(
                           this.responsiveDimentions != null &&
-                          this.responsiveDimentions.marginLeft
+                          this.responsiveDimentions.marginLeft !== undefined
                          )
                          ? this.responsiveDimentions.marginLeft
                          : '0rem'"
          [marginRight] = "(
                             this.responsiveDimentions != null &&
-                            this.responsiveDimentions.marginRight
+                            this.responsiveDimentions.marginRight !== undefined
                           )
                           ? this.responsiveDimentions.marginRight
                           : '1rem'"
@@ -97,19 +97,19 @@
                      : '15rem'"
          [width]  = "(
                       this.responsiveDimentions != null &&
-                      this.responsiveDimentions.width
+                      this.responsiveDimentions.width !== undefined
                      )
                      ? this.responsiveDimentions.width
                      : '26rem'"
          [marginLeft] = "(
                           this.responsiveDimentions != null &&
-                          this.responsiveDimentions.marginLeft
+                          this.responsiveDimentions.marginLeft !== undefined
                          )
                          ? this.responsiveDimentions.marginLeft
                          : '0rem'"
          [marginRight] = "(
                            this.responsiveDimentions != null &&
-                           this.responsiveDimentions.marginRight
+                           this.responsiveDimentions.marginRight !== undefined
                           )
                           ? this.responsiveDimentions.marginRight
                           : '1rem'"
@@ -126,19 +126,19 @@
                     : '15rem'"
          [width]  = "(
                       this.responsiveDimentions != null &&
-                      this.responsiveDimentions.width
+                      this.responsiveDimentions.width !== undefined
                      )
                      ? this.responsiveDimentions.width
                      : '26rem'"
          [marginLeft] = "(
                           this.responsiveDimentions != null &&
-                          this.responsiveDimentions.marginLeft
+                          this.responsiveDimentions.marginLeft !== undefined
                          )
                          ? this.responsiveDimentions.marginLeft
                          : '0rem'"
          [marginRight] = "(
                            this.responsiveDimentions != null &&
-                           this.responsiveDimentions.marginRight
+                           this.responsiveDimentions.marginRight !== undefined
                           )
                           ? this.responsiveDimentions.marginRight
                           : '1rem'"
@@ -155,19 +155,19 @@
                      : '15rem'"
          [width]  = "(
                        this.responsiveDimentions != null &&
-                       this.responsiveDimentions.width
+                       this.responsiveDimentions.width !== undefined
                      )
                      ? this.responsiveDimentions.width
                      : '26rem'"
          [marginLeft] = "(
                           this.responsiveDimentions != null &&
-                          this.responsiveDimentions.marginLeft
+                          this.responsiveDimentions.marginLeft !== undefined
                          )
                          ? this.responsiveDimentions.marginLeft
                          : '0rem'"
          [marginRight] = "(
                           this.responsiveDimentions != null &&
-                          this.responsiveDimentions.marginRight
+                          this.responsiveDimentions.marginRight !== undefined
                          )
                          ? this.responsiveDimentions.marginRight
                          : '1rem'"

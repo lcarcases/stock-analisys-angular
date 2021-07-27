@@ -8,20 +8,25 @@ import { Component, OnInit, Input, DoCheck, OnDestroy } from '@angular/core';
 export class OverviewComponent implements OnInit, DoCheck, OnDestroy {
 
 
-    @Input() stocksData: Array<Object>;
+  @Input() stocksData: Array<Object>;
+  //data: Object;
 
 
-  constructor() { }
+  constructor() {
+    //this.data = this.stocksData;
+    console.log("Se ingreso al componente Overview", this.stocksData);
+    //console.log("Se ingreso al componente Overview", this.data);
+   }
 
   ngOnInit(): void {
+    console.log("Se ingreso al componente Overview", this.stocksData);
   }
 
   ngDoCheck() {
-
   }
 
   ngOnDestroy() {
-  
+
   }
 
 }

@@ -20,7 +20,7 @@ export class AccordionComponent implements OnInit {
   titleColor: String;
 
   constructor() {
-
+       console.log("Se ingresó al constructor del acordeon");
   }
 
   ngOnInit(): void {

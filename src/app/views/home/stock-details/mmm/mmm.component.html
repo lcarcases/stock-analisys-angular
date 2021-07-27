@@ -1,59 +1,62 @@
-<div [ngClass]="'styles.container'">
-    <app-data-grid
-         [columnDefs]="'this.meaning.active_columns'"
-         [rowData]="'this.state.meaning.data'"
-         [width] = "(
-                     this.responsiveDimentions != null &&
-                     this.responsiveDimentions.width
-                    )
-                    ? this.responsiveDimentions.width
-                    : '50rem'"
-
-         [marginLeft] = "(
-                          this.responsiveDimentions != null &&
-                          this.responsiveDimentions.marginLeft
-                         )
-                         ? this.responsiveDimentions.marginLeft
-                         : '0rem'"
-         [height] = "'15rem'"
-    >
-    </app-data-grid>
-    <app-data-grid
-           [columnDefs]="this.moat.active_columns"
-           [rowData]="this.moat.data"
-           [width] = "(
+<div [ngClass]="'container'">
+    <app-loading *ngIf="!thereIsData; else templateGrids"></app-loading>
+    <ng-template #templateGrids>
+        <app-data-grid
+            [columnDefs]="this.meaning.active_columns"
+            [rowData]="this.meaning.data"
+            [width] = "(
                         this.responsiveDimentions != null &&
                         this.responsiveDimentions.width
-                      )
-                      ? this.responsiveDimentions.width
-                      : '50rem'"
-           [marginLeft] = "
-                           (
-                             this.responsiveDimentions != null &&
-                             this.responsiveDimentions.marginLeft
-                           )
-                           ? this.responsiveDimentions.marginLeft
-                           : '0rem'"
-           [height] = "'15rem'"
-    >
-    </app-data-grid>
+                       )
+                       ? this.responsiveDimentions.width
+                       : '50rem'"
 
-   <app-data-grid
-           [columnDefs]="this.management.active_columns"
-           [rowData]="this.management.data"
-           [width] = "(
-                        this.responsiveDimentions != null &&
-                        this.responsiveDimentions.width
-                      )
-                      ? this.responsiveDimentions.width
-                      : '50rem'"
+            [marginLeft] = "(
+                              this.responsiveDimentions != null &&
+                              this.responsiveDimentions.marginLeft
+                            )
+                            ? this.responsiveDimentions.marginLeft
+                            : '0rem'"
+            [height] = "'15rem'"
+        >
+        </app-data-grid>
+        <app-data-grid
+              [columnDefs]="this.moat.active_columns"
+              [rowData]="this.moat.data"
+              [width] = "(
+                            this.responsiveDimentions != null &&
+                            this.responsiveDimentions.width
+                          )
+                          ? this.responsiveDimentions.width
+                          : '50rem'"
+              [marginLeft] = "
+                              (
+                                this.responsiveDimentions != null &&
+                                this.responsiveDimentions.marginLeft
+                              )
+                              ? this.responsiveDimentions.marginLeft
+                              : '0rem'"
+              [height] = "'15rem'"
+        >
+        </app-data-grid>
 
-           [marginLeft] = "( this.responsiveDimentions != null &&
-                             this.responsiveDimentions.marginLeft
-                           )
-                           ? this.responsiveDimentions.marginLeft
-                           : '0rem'"
-           [height] = "'15rem'"
-    >
-    </app-data-grid>
+      <app-data-grid
+              [columnDefs]="this.management.active_columns"
+              [rowData]="this.management.data"
+              [width] = "(
+                            this.responsiveDimentions != null &&
+                            this.responsiveDimentions.width
+                          )
+                          ? this.responsiveDimentions.width
+                          : '50rem'"
+
+              [marginLeft] = "( this.responsiveDimentions != null &&
+                                this.responsiveDimentions.marginLeft
+                              )
+                              ? this.responsiveDimentions.marginLeft
+                              : '0rem'"
+              [height] = "'15rem'"
+        >
+        </app-data-grid>
+   </ng-template>
 </div>

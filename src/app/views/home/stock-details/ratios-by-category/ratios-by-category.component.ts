@@ -9,10 +9,10 @@ export class RatiosByCategoryComponent implements OnInit, DoCheck, OnDestroy {
 
   @Input() stocksData: Array<Object>;
   responsiveDimentions = {
-                            width: '',
-                            height: '',
-                            marginLeft: '',
-                            marginRight: '',
+                            width: undefined,
+                            height: undefined,
+                            marginLeft: undefined,
+                            marginRight: undefined,
                          };
   debtRatios = {
                   active_columns: [
@@ -63,7 +63,12 @@ export class RatiosByCategoryComponent implements OnInit, DoCheck, OnDestroy {
                   };
 
   constructor() {
+      console.log("Se ingresó al constructor de ratios by category");
+  }
 
+
+  ngOnInit(): void {
+    console.log("Se ingresó al init de ratios by category");
     let debtRatiosData    = this.getDebtRatiosData(this.stocksData);
     this.debtRatios.data  = debtRatiosData;
     let capitalRatiosData = this.getCapitalRatiosData(this.stocksData);
@@ -93,10 +98,6 @@ export class RatiosByCategoryComponent implements OnInit, DoCheck, OnDestroy {
      responsiveDimentions.marginLeft = '8rem';
     }
 
-  }
-
-
-  ngOnInit(): void {
   }
 
   ngDoCheck() {
