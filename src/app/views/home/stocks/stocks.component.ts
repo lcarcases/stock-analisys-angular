@@ -1,13 +1,16 @@
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CheckboxMetricModel } from './../../../models/CheckboxMetricModel';
 import { AccordionModel } from './../../../models/AccordionModel';
 import { StockModel } from './../../../models/StockModel';
+import { GlobalDataService } from '../../../services/globalDataService.services';
 import axios from 'axios';
 
 @Component({
   selector: 'app-stocks',
   templateUrl: './stocks.component.html',
-  styleUrls: ['./stocks.component.scss']
+  styleUrls: ['./stocks.component.scss'],
+  //providers: [GlobalDataService]
 })
 export class StocksComponent implements OnInit, DoCheck, OnDestroy {
 
@@ -23,6 +26,7 @@ export class StocksComponent implements OnInit, DoCheck, OnDestroy {
   activeColumns: Array<Object>;
   stockData: Array<Object>;//Array<StockModel>;
   registeredUser: any;
+  test:any;
 
   accordionStyles = {
                       backgroundColor: '',
@@ -31,6 +35,10 @@ export class StocksComponent implements OnInit, DoCheck, OnDestroy {
                     };
 
   headerStyles = {
+                   header: {
+                             width: '',
+                             paddingLeft: ''
+                           },
                    stockName: {
                                 marginLeft: '5rem'
                               },
@@ -39,8 +47,16 @@ export class StocksComponent implements OnInit, DoCheck, OnDestroy {
                                 }
                  };
 
+  dataGridStyles = {
+                     width: '45rem',
+                     marginLeft: '0rem',
+                     height: '20.5rem'
+                   }
 
-  constructor() {
+
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private _globalDataService: GlobalDataService) {
         this.isCollapsedLateralMenu = false;
         this.login = true;
         this.stockData = [];
@@ -135,59 +151,73 @@ export class StocksComponent implements OnInit, DoCheck, OnDestroy {
                                 { headerName: "MOS Price", field: "mosPrice", position: 21 },
                                 { headerName: "Sticker Price", field: "stickerPrice", position: 23 },
                               ];
-          /*for(let i=0; i < 5; i++) {
-            //let stock: StockModel = new StockModel();
-            let stock = {
-                         stockName: 'APPL - APPLE',
-                         moat                 : Math.floor(Math.random() * 10).toString(),
-                         mgt                  : Math.floor(Math.random() * 10).toString(),
-                         predictability       : Math.floor(Math.random() * 10).toString(),
-                         bvpsRating           : Math.floor(Math.random() * 10).toString(),
-                         epsRating            : Math.floor(Math.random() * 10).toString(),
-                         ocpsRating           : Math.floor(Math.random() * 10).toString(),
-                         salesRating          : Math.floor(Math.random() * 10).toString(),
-                         roicRating           : Math.floor(Math.random() * 10).toString(),
-                         roeRating            : Math.floor(Math.random() * 10).toString(),
-                         closingPrice         : Math.floor(Math.random() * 10).toString(),
-                         marketCap            : Math.floor(Math.random() * 10).toString(),
-                         fiftyTwoWeekLow      : Math.floor(Math.random() * 10).toString(),
-                         fiftyTwoWeekHigh     : Math.floor(Math.random() * 10).toString(),
-                         fiftyDayAverage      : Math.floor(Math.random() * 10).toString(),
-                         twoHundredDayAverage : Math.floor(Math.random() * 10).toString(),
-                         volume               : Math.floor(Math.random() * 10).toString(),
-                         beta                 : Math.floor(Math.random() * 10).toString(),
-                         growthRate           : Math.floor(Math.random() * 10).toString(),
-                         eps                  : Math.floor(Math.random() * 10).toString(),
-                         pe                   : Math.floor(Math.random() * 10).toString(),
-                         stickerPrice         : Math.floor(Math.random() * 10).toString(),
-                         mosPrice             : Math.floor(Math.random() * 10).toString(),
-                         pbt                  : Math.floor(Math.random() * 10).toString(),
-                         divRecentQuarter     : Math.floor(Math.random() * 10).toString(),
-                         divPerShare          : Math.floor(Math.random() * 10).toString(),
-                         divYield             : Math.floor(Math.random() * 10).toString(),
-                        };
-            this.stockData.push(stock);
-          } */
-
-          this.getStocks();
 
         this.accordionStyles.backgroundColor = '#1e2337';
         this.accordionStyles.headerColor = '#34495e';
         this.accordionStyles.titleColor = '#e29402';
 
+        if(this.isCollapsedLateralMenu) {
+          this.dataGridStyles.width = '70rem';
+          this.dataGridStyles.marginLeft = '6rem';
+        } else {
+          this.dataGridStyles.width = '45rem';
+          this.dataGridStyles.marginLeft = '0rem';
+        }
+
+        if(window.innerWidth <= 375) {
+           this.headerStyles.header.width = '23.1rem';
+           this.headerStyles.header.paddingLeft = '0rem';
+        }
+
         if(window.innerWidth > 375 && window.innerWidth <= 900) {
           this.headerStyles.searchInput.marginLeft = '-7.8rem';
+          if(!this.isCollapsedLateralMenu) {
+            this.dataGridStyles.width = '31rem';
+            this.dataGridStyles.marginLeft = '-8.5rem';
+            this.dataGridStyles.height = '60rem';
+          } else {
+            this.dataGridStyles.width = '51rem';
+            this.dataGridStyles.marginLeft = '4.5rem';
+            this.dataGridStyles.height = '60rem';
+          }
+        }
+
+        if(window.innerWidth > 900) {
+          this.headerStyles.header.width = '79rem';
+          this.headerStyles.header.paddingLeft = '0rem';
         }
   }
 
   ngOnInit(): void {
     console.log("Se va a inicializar la vista Stocks");
+    this.getStocks();
+    /*let test = this.route.snapshot.queryParamMap.get('userRegistered');
+
+    console.log(test);
+    this.route.queryParamMap
+                          .subscribe(params => {
+                            console.log(params);
+                            this.registeredUser = params.get('userRegistered');
+                            //this.registeredUser = params.userRegistered;
+                            console.log(this.registeredUser);
+                            this.getStocks();
+                          }
+  );*/
     //this.rowData = this.http.get<any[]>('https://www.ag-grid.com/example-assets/small-row-data.json');
 
   }
 
   ngDoCheck() {
-     console.log("Se va a renderizar la vista Stocks");
+    if(window.innerWidth > 375 && window.innerWidth <= 900) {
+      if(!this.isCollapsedLateralMenu) {
+        this.dataGridStyles.width = '48rem';
+        this.dataGridStyles.marginLeft = '-8.5rem';
+      } else {
+        this.dataGridStyles.width = '68rem';
+        this.dataGridStyles.marginLeft = '4.5rem';
+      }
+    }
+    console.log("Se va a renderizar la vista Stocks");
   }
 
   ngOnDestroy() {
@@ -230,48 +260,17 @@ export class StocksComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   async getStocks(callback = null) {
-            /*for(let i; i < 5; i++) {
-              let stock: StockModel;
-              stock.stockName = 'APPL - APPLE';
-              stock.moat = Math.floor(Math.random() * 10).toString();
-              stock.mgt  = Math.floor(Math.random() * 10).toString();
-              stock.predictability = Math.floor(Math.random() * 10).toString();
-              stock.bvpsRating = Math.floor(Math.random() * 10).toString();
-              stock.epsRating = Math.floor(Math.random() * 10).toString();
-              stock.ocpsRating = Math.floor(Math.random() * 10).toString();
-              stock.salesRating = Math.floor(Math.random() * 10).toString();
-              stock.roicRating = Math.floor(Math.random() * 10).toString();
-              stock.roeRating = Math.floor(Math.random() * 10).toString();
-              stock.closingPrice = Math.floor(Math.random() * 10).toString();
-              stock.marketCap = Math.floor(Math.random() * 10).toString();
-              stock.fiftyTwoWeekLow = Math.floor(Math.random() * 10).toString();
-              stock.fiftyTwoWeekHigh = Math.floor(Math.random() * 10).toString();
-              stock.fiftyDayAverage = Math.floor(Math.random() * 10).toString();
-              stock.twoHundredDayAverage = Math.floor(Math.random() * 10).toString();
-              stock.volume = Math.floor(Math.random() * 10).toString();
-              stock.beta = Math.floor(Math.random() * 10).toString();
-              stock.growthRate = Math.floor(Math.random() * 10).toString();
-              stock.eps = Math.floor(Math.random() * 10).toString();
-              stock.pe = Math.floor(Math.random() * 10).toString();
-              stock.stickerPrice = Math.floor(Math.random() * 10).toString();
-              stock.mosPrice = Math.floor(Math.random() * 10).toString();
-              stock.pbt = Math.floor(Math.random() * 10).toString();
-              stock.divRecentQuarter = Math.floor(Math.random() * 10).toString();
-              stock.divPerShare = Math.floor(Math.random() * 10).toString();
-              stock.divYield = Math.floor(Math.random() * 10).toString();
-
-              this.stockData.push(stock);
-            } */
 
     //const userRegistered = this.props.location.state;
-    const userRegistered:any = null;
+    //const userRegistered:any = null;
     axios.defaults.withCredentials = true;
     const res = await axios({
                               method: 'post',
                               url: 'http://127.0.0.1:3000/api/v1/stocks/all/',
-                              //url: 'https://57407d327847.ngrok.io/api/v1/stocks/all/',
+                              //url: 'https://61d25eb12b61.ngrok.io/api/v1/stocks/all/',
                               data: {
-                                userRegistered: userRegistered
+                                //userRegistered: this.registeredUser
+                                userRegistered: this._globalDataService.getRegisteredUser()
                               }
                               //withCredentials: true
                            });
@@ -354,6 +353,7 @@ export class StocksComponent implements OnInit, DoCheck, OnDestroy {
 
     } else if(res.data.status === 'notLogin') {
         this.login = false;
+        this.router.navigate(['/login']);
     }
 
   }

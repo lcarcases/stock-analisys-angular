@@ -9,7 +9,13 @@ export class HeaderComponent implements OnInit, DoCheck, OnDestroy {
 
   @Input() stockName: String;
   @Input() userName: String;
+  @Input() width: string;
+  @Input() marginLeft: string;
   @Input() headerStyles = {
+                            header: {
+                                      width: '',
+                                      paddingLeft: ''
+                            },
                             stockName: {
                                          marginLeft: '',
                                        },
@@ -18,7 +24,8 @@ export class HeaderComponent implements OnInit, DoCheck, OnDestroy {
                                         },
                           };
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     console.log("Se va a inicializar el componente header");

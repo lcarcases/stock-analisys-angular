@@ -153,3 +153,99 @@ input[type="text"] {
   height: 1rem;
   background: #f1f1f1;
 }
+
+@media only screen and (max-width: 56.25em) {
+  input[type="text"] {
+                       height: 0.01rem;
+                       width: 19rem;
+                       margin-left: 8rem;
+                       font-size: 1rem;
+                     }
+
+  .container {
+
+      &_form {
+        height: 13.5rem;
+      }
+
+      &_register {
+
+         flex-direction: column;
+
+         &_title {
+            margin-left: 5.5rem;
+            font-size: 1rem;
+         }
+
+         &_button {
+            width: 21rem;
+            margin-left: 8rem;
+            height: 2.7rem;
+         }
+
+         &_create {
+            margin-left: 15.7rem;
+            font-size: 13px;
+         }
+      }
+
+      &_social {
+
+         height: 10rem;
+         
+         &_facebook {
+
+              width: 21rem;
+              margin-left: 0.5rem;
+              height: 2.5rem;
+
+              &_img {
+                background: url('./../../../assets/images/facebook-icon.png') transparent 5px 21% no-repeat;
+                margin-left: 1rem;
+              }
+
+              &_text {
+                 font-size: 1rem;
+                 padding-left: 0.5rem;
+                 margin-bottom: 1.5rem;
+              }
+         }
+
+         &_google {
+
+              width: 21rem;
+              margin-left: 0.5rem;
+              height: 2.5rem;
+
+              &_img {
+                background: url('./../../../assets/images/google-icon.png') transparent 5px 21% no-repeat;
+                margin-left: 1rem;
+              }
+
+              &_text {
+                font-size: 1rem;
+                padding-left: 0.5rem;
+                margin-bottom: 1.5rem;
+              }
+        }
+      }
+
+  }
+
+  .searchButton {
+                  padding-top: 0.2rem;
+                  padding-bottom: 0.4rem;
+                  height: 2.7rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .search {
+      width: 39rem;
+      margin-left: 9rem;
+  }
+
+  .searchButton {
+      height: 2.7rem;
+  }
+}

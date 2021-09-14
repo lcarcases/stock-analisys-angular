@@ -76,3 +76,19 @@
         left: 1.4rem !important;
     }
 }
+
+@media only screen and (max-width: 56.25em) {
+    .cb_trail {
+        &_handler {
+            &:before {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .cb_container {
+        &_text {
+            font-size: 1.2rem;
+        }
+    }
+}

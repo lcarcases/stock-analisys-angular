@@ -31,6 +31,20 @@ html {
     align-items: center;
 }
 
+@media only screen and (max-width: 56.25em) {
+  html {
+    //font-size: 13px;
+    font-size: 0.6rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  html {
+    //font-size: 13px;
+    font-size: 0.9rem;
+  }
+}
+
 
 @import "~ag-grid-community/dist/styles/ag-grid.css";
 @import "~ag-grid-community/dist/styles/ag-theme-balham.css";

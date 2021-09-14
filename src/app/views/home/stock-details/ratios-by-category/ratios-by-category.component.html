@@ -3,8 +3,8 @@
          [columnDefs]="this.debtRatios.active_columns"
          [rowData]="this.debtRatios.data"
          [height] = "(
-                       this.responsiveDimentions !== null &&
-                       this.responsiveDimentions.height !== undefined
+                       this.responsiveDimentions != null &&
+                       this.responsiveDimentions.height
                      )
                      ? this.responsiveDimentions.height
                      : '15rem'"

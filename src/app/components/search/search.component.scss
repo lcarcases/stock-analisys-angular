@@ -34,23 +34,31 @@ input[type="text"] {
 
 @media only screen and (max-width: 56.25em) {
     input[type="text"] {
-                         height: 1.3rem;
+                         height: 0.5rem;
+                         font-size: 1.4rem;
                        }
 
     .searchButton {
                     padding-top: 0.2rem;
                     padding-bottom: 0.4rem;
                     height: 2.7rem;
+                    font-size: 1.2rem;
+    }
+
+    @media only screen and (max-width: 56.25em) {
+        .search {
+            width: 22rem;
+        }
     }
 }
 
 @media only screen and (max-width: 37.5em) {
     .search {
-        width: 39rem;
-        margin-left: 9rem;
+        width: 23rem;
+        margin-left: -3.7rem;
     }
 
     .searchButton {
-        height: 2.7rem;
+        height: 2.6rem;
     }
 }

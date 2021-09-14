@@ -23,6 +23,10 @@ export class StockDetailsComponent implements OnInit, DoCheck, OnDestroy {
   username: String;
 
   headerStyles = {
+                    header: {
+                             width: '',
+                             paddingLeft: ''
+                    },
                     stockName: {
                                  marginLeft: '',
                                },
@@ -67,6 +71,11 @@ export class StockDetailsComponent implements OnInit, DoCheck, OnDestroy {
           } else {
               this.sideMenuStyles.height = '50rem';
           }
+
+         if(window.innerWidth <= 375) {
+            this.headerStyles.header.width = '23.1rem';
+            this.headerStyles.header.paddingLeft = '0.8rem';
+         }
 
       if(this.registeredUser !== undefined) {
           if('username' in this.registeredUser) {
@@ -123,6 +132,7 @@ export class StockDetailsComponent implements OnInit, DoCheck, OnDestroy {
 
               } else if(response.status === 'notLogin') {
                     this.login = false;
+                    this.router.navigate(['/login']);
               }
        },
        error => {
@@ -185,6 +195,7 @@ export class StockDetailsComponent implements OnInit, DoCheck, OnDestroy {
 
         } else if(res.data.status === 'notLogin') {
             this.login = false;
+            this.router.navigate(['/login']);
         }
 
     }

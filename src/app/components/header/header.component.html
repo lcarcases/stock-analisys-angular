@@ -1,5 +1,10 @@
 
-<div [ngClass]="'header'">
+<div [ngClass]="'header'"
+     [ngStyle]="{
+                 'width': this.headerStyles.header.width,
+                 'padding-left': this.headerStyles.header.paddingLeft
+                }"
+>
     <div [ngClass]="'stockName'">
         <h2><span >{{this.stockName}}</span></h2>
       </div>

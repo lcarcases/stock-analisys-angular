@@ -25,15 +25,23 @@
                }
 }
 
+@media only screen and (max-width: 56.25em) {
+    .container {
+                 width: 74rem !important;
+               }
+}
+
+
+
 @media only screen and (max-width: 37.5em) {
     .main {
        flex-direction: column;
-       width: 54rem;
+       width: 23.9rem;
        background-color: #1E2337;
     }
 
     .container {
-        width: 54rem;
+        width: 23rem !important;
     }
 
     .sidebar {

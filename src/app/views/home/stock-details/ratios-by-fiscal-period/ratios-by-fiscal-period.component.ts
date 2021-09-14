@@ -40,6 +40,7 @@ export class RatiosByFiscalPeriodComponent implements OnInit, DoCheck, OnDestroy
     if(window.innerWidth <= 375) {
        responsiveDimentions = {};
        responsiveDimentions.width  = '45rem';
+       responsiveDimentions.height  = '20rem';
        responsiveDimentions.marginLeft = '4rem';
     }
 
@@ -51,6 +52,9 @@ export class RatiosByFiscalPeriodComponent implements OnInit, DoCheck, OnDestroy
   }
 
   ngDoCheck() {
+    if(window.innerWidth > 375 && window.innerWidth <= 900) {
+      this.responsiveDimentions.width = '51rem';
+    }
   }
 
   ngOnDestroy() {

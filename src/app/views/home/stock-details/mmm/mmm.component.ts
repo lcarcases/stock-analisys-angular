@@ -10,8 +10,8 @@ export class MmmComponent implements OnInit, DoCheck, OnDestroy {
   @Input() stocksData: Array<Object>;
   thereIsData: Number;
   responsiveDimentions = {
-                           width: '',
-                           marginLeft: '',
+                           width: null,
+                           marginLeft: null,
                          };
   meaning = {
                 active_columns: [
@@ -56,6 +56,7 @@ export class MmmComponent implements OnInit, DoCheck, OnDestroy {
              }
     };
 
+
   constructor() {
   }
 
@@ -91,7 +92,11 @@ export class MmmComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   ngDoCheck() {
-      console.log("Se ejecutó el doCheck de la vista MMM")
+    if(window.innerWidth > 375 && window.innerWidth <= 900) {
+        this.responsiveDimentions.width = '50rem';
+        this.responsiveDimentions.marginLeft = '2rem';
+    }
+    console.log("Se ejecutó el doCheck de la vista MMM")
   }
 
   ngOnDestroy() {

@@ -37,14 +37,18 @@ export class IncomeStatementComponent implements OnInit, DoCheck, OnDestroy {
 
     if(window.innerWidth <= 375) {
       responsiveDimentions = {};
-      responsiveDimentions.width  = '45rem';
-      responsiveDimentions.marginLeft = '4.4rem';
+      responsiveDimentions.width  = '20rem';
+      responsiveDimentions.height  = '20rem';
+      responsiveDimentions.marginLeft = '2.4rem';
     }
 
     this.responsiveDimentions = responsiveDimentions;
   }
 
   ngDoCheck() {
+    if(window.innerWidth > 375 && window.innerWidth <= 900) {
+      this.responsiveDimentions.width = '51rem';
+    }
     console.log("Se va a renderizar la vista income statement");
   }
 

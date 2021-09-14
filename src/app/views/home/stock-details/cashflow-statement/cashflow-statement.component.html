@@ -14,7 +14,18 @@
                         )
                         ? this.responsiveDimentions.marginLeft
                         : '0rem'"
-        [height] = "'40rem'"
+        [marginTop] = "
+                        ( this.responsiveDimentions != null &&
+                          this.responsiveDimentions.marginTop
+                        )
+                        ? this.responsiveDimentions.marginTop
+                        : '0rem'"
+        [height] = "
+                    ( this.responsiveDimentions != null &&
+                      this.responsiveDimentions.height
+                    )
+                    ? this.responsiveDimentions.height
+                    : '40rem'"
         [onSelectedRow] = "this.onSelectedRow.bind(this)"
     >
     </app-tree-datagrid>

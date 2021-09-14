@@ -11,6 +11,10 @@ const appRoutes: Routes = [
                              component: StocksComponent
                            },
                            {
+                            path: 'stocks',
+                            component: StocksComponent
+                           },
+                           {
                              path: 'stock-details/:symbol',
                              component: StockDetailsComponent
                            },

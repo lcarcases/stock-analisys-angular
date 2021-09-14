@@ -61,6 +61,13 @@
 
 @media only screen and (max-width: 37.5em) {
     .newCard {
-               margin-right: 4rem;
+               margin-right: 1rem;
+               width: 9rem;
+               margin-left: 1.5rem;
+               &_header {
+                   &_title {
+                       font-size: 0.9rem;
+                   }
+               }
              }
  }

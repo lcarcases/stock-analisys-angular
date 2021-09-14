@@ -47,12 +47,6 @@ export class DataGridComponent implements OnInit, DoCheck, OnDestroy {
 
   constructor( private route: ActivatedRoute,
                private router: Router) {
-      this.width = '45rem';
-      this.height = '20.5rem';
-      this.marginLeft = '0rem';
-      this.marginRight = '0rem';
-      this.marginBottom = '0rem';
-      this.marginTop = '0.8rem';
       //this.router = new Router();
 
       //this.gridOptions.rowData = this.rowData;
@@ -61,6 +55,12 @@ export class DataGridComponent implements OnInit, DoCheck, OnDestroy {
 
   ngOnInit(): void {
     let i = 0;
+    this.width = '45rem';
+    this.height = this.height ? this.height : '20.5rem';
+    this.marginLeft = '0rem';
+    this.marginRight = '0rem';
+    this.marginBottom = '0rem';
+    this.marginTop = '0.8rem';
   }
 
   ngDoCheck() {

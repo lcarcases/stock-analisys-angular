@@ -5,7 +5,7 @@
     justify-content: space-between;
     background-color: $bg-color-2;
     //width: 80rem;
-    padding-left: 3rem;
+    padding-left: 1rem;
 }
 
 .stockName {
@@ -46,24 +46,42 @@
 
  }
 
+ @media only screen and (max-width: 56.25em) {
+    .search {
+        width: 22rem;
+    }
+
+    .stockName {
+        font-size: 0.7rem;
+    }
+ }
+
  @media only screen and (max-width: 37.5em) {
      .header {
          flex-direction: column;
-         width: 54rem;
+         width: 24.1rem;
+         padding-left:26rem;
      }
 
      .searchComponent {
          margin-left: 3.8rem !important;
-         margin-right: -8rem;
-         width: 46rem;
+         //margin-right: -8rem;
+         width: 17rem;
      }
 
      .stockName {
-         margin-left: 5rem !important;
+         width: 15rem;
+         margin-left: 8rem !important;
+         font-size: 0.7rem;
      }
 
      .user {
-             margin-left: 22rem;
+             margin-left: 4.2rem;
              margin-bottom: 1rem;
+             width: 16rem;
            }
+     .search {
+        width: 22rem;
+        margin-left: 1.3em;
+     }
  }

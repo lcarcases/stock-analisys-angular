@@ -16,6 +16,7 @@ export class CashflowStatementComponent implements OnInit, DoCheck, OnDestroy {
                             height: undefined,
                             marginLeft: undefined,
                             marginRight: undefined,
+                            marginTop: undefined
                          };
 
   constructor() { }
@@ -38,8 +39,9 @@ export class CashflowStatementComponent implements OnInit, DoCheck, OnDestroy {
 
     if(window.innerWidth <= 375) {
       responsiveDimentions = {};
-      responsiveDimentions.width  = '45rem';
-      responsiveDimentions.marginLeft = '4.4rem';
+      responsiveDimentions.width  = '20rem';
+      responsiveDimentions.height  = '20rem';
+      responsiveDimentions.marginLeft = '2.4rem';
     }
 
     this.responsiveDimentions = responsiveDimentions;
@@ -47,6 +49,10 @@ export class CashflowStatementComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   ngDoCheck() {
+    if(window.innerWidth > 375 && window.innerWidth <= 900) {
+      this.responsiveDimentions.width = '51rem';
+      this.responsiveDimentions.marginTop = '2rem';
+    }
     console.log("Se va a renderizar la vista cashflow statement");
   }
 

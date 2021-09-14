@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
+import { FormsModule } from '@angular/forms';
+import { GlobalDataService } from './services/globalDataService.services';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -59,10 +61,11 @@ import { CashflowStatementComponent } from './views/home/stock-details/cashflow-
     BrowserModule,
     FontAwesomeModule,
     routing,
+    FormsModule,
     HttpClientModule,
     AgGridModule.withComponents([CheckboxColumnComponent])
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders,GlobalDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

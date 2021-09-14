@@ -125,15 +125,31 @@
 
 }
 
+@media only screen and (max-width: 56.25em) {
+  .collapsible {
+    width: 22rem;
+  }
+
+  .toogle_bar {
+    left: 18rem;
+  }
+}
+
 @media only screen and (max-width: 37.5em) {
   .sidebar {
-     margin-left: 16rem;
+     margin-left: 1rem;
+     width:20rem;
   }
 
   .collapsible {
-     width: 30rem;
+     width: 23rem;
      &_content {
-        height: 25rem;
+        height: 17rem;
      }
+  }
+
+  .toogle_bar {
+    left: 18rem;
+    visibility: hidden;
   }
 }
