@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  stock_analisys_angular:
+    working_dir: /var/www/html/localhost/stockAnalisysAngular/
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '4200:4200'
+    volumes:
+      #- ./src:/var/www/html/localhost/stockAnalisysAngular/src
+      - .:/var/www/html/localhost/stockAnalisysAngular/
+    stdin_open: true
+    tty: true
