@@ -8,8 +8,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - '4200:4200'
-    volumes:
+    #volumes:
       #- ./src:/var/www/html/localhost/stockAnalisysAngular/src
-      - .:/var/www/html/localhost/stockAnalisysAngular/
+      #- .:/var/www/html/localhost/stockAnalisysAngular/
     stdin_open: true
     tty: true
