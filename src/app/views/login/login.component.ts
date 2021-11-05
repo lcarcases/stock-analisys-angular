@@ -3,6 +3,7 @@ import axios from 'axios';
 import {NgForm} from '@angular/forms';
 import {Router, ActivatedRoute} from '@angular/router';
 import { GlobalDataService } from '../../services/globalDataService.services';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -54,11 +55,11 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginWithGoogle() {
-    window.location.assign('http://127.0.0.1:3000/api/v1/users/auth/google');
+    window.location.assign(`http://${environment.domain}:3000/api/v1/users/auth/google`);
   }
 
   onLoginWithFacebook() {
-    window.location.assign('http://127.0.0.1:3000/api/v1/users/auth/facebook');
+    window.location.assign(`http://${environment.domain}:3000/api/v1/users/auth/facebook`);
     //window.location.assign('https://61d25eb12b61.ngrok.io/api/v1/users/auth/facebook');
   }
 
@@ -67,10 +68,11 @@ export class LoginComponent implements OnInit {
     //console.log(this.username);
     console.log(this.user.username);
     //$event.preventDefault();
+    console.log(environment.domain);
     if(!this.isLogin) {
         const res = await axios({
                                 method: 'post',
-                                url: 'http://127.0.0.1:3000/api/v1/users/register/',
+                                url: `http://${environment.domain}:3000/api/v1/users/register/`,
                                 data: {
                                   username: this.user.username,
                                   password: this.user.password,
@@ -90,7 +92,7 @@ export class LoginComponent implements OnInit {
     } else {
         const res = await axios({
           method: 'post',
-          url: 'http://127.0.0.1:3000/api/v1/users/login/',
+          url: `http://${environment.domain}:3000/api/v1/users/login/`,
           data: {
             username: this.user.username,
             password: this.user.password

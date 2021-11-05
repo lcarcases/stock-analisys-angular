@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders,HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { GlobalDataService } from './globalDataService.services';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class  StocksService {
@@ -10,7 +11,7 @@ export class  StocksService {
 
     constructor(private _http: HttpClient,
                 private _globalDataService: GlobalDataService) {
-        this.stockDetailUrl = 'http://127.0.0.1:3000/api/v1/stocks/stock-by-symbol';
+        this.stockDetailUrl = `http://${environment.domain}:3000/api/v1/stocks/stock-by-symbol`;
 
     }
 

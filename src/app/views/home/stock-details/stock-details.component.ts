@@ -3,6 +3,7 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 // import { StocksService } from 'src/app/services/stocks.services';
 import { StocksService } from '../../../services/stocks.services';
 import axios from 'axios';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-stock-details',
@@ -171,7 +172,7 @@ export class StockDetailsComponent implements OnInit, DoCheck, OnDestroy {
 
         axios.defaults.withCredentials = true;
         const res = await axios({
-            url: `http://127.0.0.1:3000/api/v1/stocks/stock-by-symbol?symbol=${this.symbol}`
+            url: `http://${environment.domain}:3000/api/v1/stocks/stock-by-symbol?symbol=${this.symbol}`
         });
 
         if(res.data.status === 'success') {

@@ -4,6 +4,7 @@ import { CheckboxMetricModel } from './../../../models/CheckboxMetricModel';
 import { AccordionModel } from './../../../models/AccordionModel';
 import { StockModel } from './../../../models/StockModel';
 import { GlobalDataService } from '../../../services/globalDataService.services';
+import { environment } from '../../../../environments/environment';
 import axios from 'axios';
 
 @Component({
@@ -266,7 +267,7 @@ export class StocksComponent implements OnInit, DoCheck, OnDestroy {
     axios.defaults.withCredentials = true;
     const res = await axios({
                               method: 'post',
-                              url: 'http://127.0.0.1:3000/api/v1/stocks/all/',
+                              url: `http://${environment.domain}:3000/api/v1/stocks/all/`,
                               //url: 'https://61d25eb12b61.ngrok.io/api/v1/stocks/all/',
                               data: {
                                 //userRegistered: this.registeredUser
