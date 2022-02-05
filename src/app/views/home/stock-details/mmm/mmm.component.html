@@ -17,7 +17,12 @@
                             )
                             ? this.responsiveDimentions.marginLeft
                             : '0rem'"
-            [height] = "'15rem'"
+            [height] = "(
+                          this.responsiveDimentions != null &&
+                          this.responsiveDimentions.height
+                        )
+                        ? this.responsiveDimentions.height
+                        : '15rem'"
         >
         </app-data-grid>
         <app-data-grid
@@ -36,7 +41,12 @@
                               )
                               ? this.responsiveDimentions.marginLeft
                               : '0rem'"
-              [height] = "'15rem'"
+              [height] = "(
+                            this.responsiveDimentions != null &&
+                            this.responsiveDimentions.height
+                          )
+                          ? this.responsiveDimentions.height
+                          : '15rem'"
         >
         </app-data-grid>
 
@@ -55,7 +65,12 @@
                               )
                               ? this.responsiveDimentions.marginLeft
                               : '0rem'"
-              [height] = "'15rem'"
+              [height] = "(
+                            this.responsiveDimentions != null &&
+                            this.responsiveDimentions.height
+                          )
+                          ? this.responsiveDimentions.height
+                          : '15rem'"
         >
         </app-data-grid>
    </ng-template>

@@ -52,7 +52,9 @@ export class BalanceSheetComponent implements OnInit, DoCheck, OnDestroy {
 
   ngDoCheck() {
     if(window.innerWidth > 375 && window.innerWidth <= 900) {
-      this.responsiveDimentions.width = '51rem';
+      this.responsiveDimentions.width = '23rem';
+      this.responsiveDimentions.height = '20rem';
+      this.responsiveDimentions.marginLeft = '0.5rem';
     }
     console.log("Se va a renderizar la vista balance sheet");
   }

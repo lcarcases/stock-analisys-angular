@@ -59,8 +59,8 @@
  @media only screen and (max-width: 37.5em) {
      .header {
          flex-direction: column;
-         width: 24.1rem;
-         padding-left:26rem;
+         width: 20.9rem;
+         padding-left: 3rem;
      }
 
      .searchComponent {
@@ -71,12 +71,12 @@
 
      .stockName {
          width: 15rem;
-         margin-left: 8rem !important;
+         margin-left: 3rem !important;
          font-size: 0.7rem;
      }
 
      .user {
-             margin-left: 4.2rem;
+             margin-left: 2.2rem;
              margin-bottom: 1rem;
              width: 16rem;
            }

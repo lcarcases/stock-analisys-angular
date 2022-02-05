@@ -175,7 +175,7 @@ export class StocksComponent implements OnInit, DoCheck, OnDestroy {
           if(!this.isCollapsedLateralMenu) {
             this.dataGridStyles.width = '31rem';
             this.dataGridStyles.marginLeft = '-8.5rem';
-            this.dataGridStyles.height = '60rem';
+            this.dataGridStyles.height = '33rem';
           } else {
             this.dataGridStyles.width = '51rem';
             this.dataGridStyles.marginLeft = '4.5rem';

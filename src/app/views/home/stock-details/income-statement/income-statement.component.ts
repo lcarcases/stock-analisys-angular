@@ -33,6 +33,9 @@ export class IncomeStatementComponent implements OnInit, DoCheck, OnDestroy {
     if( window.innerWidth > 375 && window.innerWidth <= 900) {
       responsiveDimentions = {};
       responsiveDimentions.width  = '67rem';
+      responsiveDimentions.width = '23rem';
+      responsiveDimentions.height = '20rem';
+      responsiveDimentions.marginLeft = '0.5rem';
     }
 
     if(window.innerWidth <= 375) {
@@ -47,7 +50,9 @@ export class IncomeStatementComponent implements OnInit, DoCheck, OnDestroy {
 
   ngDoCheck() {
     if(window.innerWidth > 375 && window.innerWidth <= 900) {
-      this.responsiveDimentions.width = '51rem';
+      this.responsiveDimentions.width = '23rem';
+      this.responsiveDimentions.height = '20rem';
+      this.responsiveDimentions.marginLeft = '0.5rem';
     }
     console.log("Se va a renderizar la vista income statement");
   }

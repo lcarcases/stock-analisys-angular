@@ -86,7 +86,7 @@ export class RatiosByCategoryComponent implements OnInit, DoCheck, OnDestroy {
 
     if( window.innerWidth > 375 && window.innerWidth <= 900) {
         responsiveDimentions = {};
-        responsiveDimentions.height = '19rem';
+        responsiveDimentions.height = '6rem';
         responsiveDimentions.width  = '35rem';
         responsiveDimentions.marginLeft = '0rem';
     }
